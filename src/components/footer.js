@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
  const Footer = (props)=>{
 
 return(
@@ -11,9 +11,9 @@ return(
  
          <div className='col-4 offset-1 col-sm-2'> 
 <div className='list-unstyled'>
-<li><a href='#'>HOME </a></li>
-<li><a href='#'>ABOUT </a></li>
-<li><a href='#'>CONTACT US</a>
+<li><Link  to='/home'>HOME</Link></li>
+<li><Link  to='/aboutus'>ABOUT</Link></li>
+<li><Link   to='/adress'>CONTACT US</Link>
 </li></div></div>
 <div className='col-7 col-sm-5'>
 <div className='text-center'>

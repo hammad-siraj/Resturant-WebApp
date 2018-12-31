@@ -1,15 +1,38 @@
 import React from 'react';
-import {Navbar,Jumbotron} from 'reactstrap';
+import {Navbar,Jumbotron,Nav,NavbarBrand,Collapse,NavItem,NavbarToggler} from 'reactstrap';
+import {NavLink} from 'react-router-dom'
 
 export default class Appbar extends React.Component{
 
     render(){
 
-        return(<div>
-            <Navbar  dark >
-            <h1>
-            </h1>
-            </Navbar>
+        return(
+        <div className='container'>
+            <Navbar  dark color='secondary' expand='md'>
+<NavbarBrand className='mr-auto'><img width='4%' height='4%' src='./assets/images/mainlogo.png' alt='AL-HAMMAD' /></NavbarBrand>
+<Nav navbar>
+<NavItem >
+ <NavLink className='nav-link' to='/home'>
+<span className='fa fa-home fa-lg'></span>
+ HOME
+</NavLink>
+</NavItem>              
+
+<NavItem>
+    <NavLink className='nav-link' to='/menu'>
+  <span className='fa fa-list fa-lg'></span>
+        MENU</NavLink>
+    </NavItem>
+
+<NavItem>
+    <NavLink className='nav-link' to='/contact'>
+    <span className='fa fa-address-card fa-lg'> </span>
+       CONTACT </NavLink>
+    </NavItem>
+
+</Nav>
+
+            </Navbar> 
             <Jumbotron>
 <div className="container">
 
@@ -28,4 +51,5 @@ export default class Appbar extends React.Component{
             </Jumbotron>
         </div>)
     }
-}
+    }
+    
