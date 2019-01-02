@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Menu  from './menu'
 import {DISHES} from '../shared/dishes';
 import About from './aboutus'
-import {BrowserRouter,Switch,Route,Redirect,Router,withRouter} from 'react-router-dom';
+import {BrowserRouter,Switch,Route,Redirect,Router,withRouter,} from 'react-router-dom';
 import { Dishdetailed } from './dishDetailed';
 import Appbar from './appbar'
 import Footer from './footer'
@@ -11,6 +11,7 @@ import PROMOTIONS from '../shared/promotions'
 import LEADERS from '../shared/leader'
 import Home from './home'
 import Contact from './contact'
+
 class Main extends Component {
 constructor(props){
 super(props);
@@ -56,9 +57,23 @@ dish.featured)[0]}
 )
 
 }
+const Aboutpage =()=>{
+return(
 
-const Contactpage =()=>{
-    return(<Contact/>)
+    <About leaders={this.state.leader}/>
+)
+
+}
+
+const DishwithId =({match})=>{
+    return(
+
+<Dishdetailed 
+dishid={this.state.dishes.filter((dish)=> dish.id === parseInt( match.params.dishid , 10) )[0]}
+comment={this.state.comment.filter((comments)=>comments.dishId===parseInt(match.params.dishid,10))[0]}
+/>
+
+    )
     
     }
     
@@ -73,8 +88,9 @@ return(
 ()=>{return <Menu dishes={this.state.dishes}/>}
 
 } />
-<Route exact path='/aboutus' render={()=>{ return <About/>}}/>
+<Route path='/menu/:dishid' render={(props)=>{return <DishwithId {...props}/>}} />
 <Route exact  path='/contact' render={()=>{return <Contact/>}}/>
+<Route exact path='/aboutus' render={()=>{return <Aboutpage />}}/>
  
  <Redirect to='/home'/> 
 </Switch>

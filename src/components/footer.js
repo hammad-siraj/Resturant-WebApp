@@ -18,7 +18,7 @@ return(
 <div className='col-7 col-sm-5'>
 <div className='text-center'>
 <h5> OUR ADDRESS</h5>
-<address>
+<address >
 KHADDA MARKET PHASE-II <br/>
 DEFENCE HOUSING AUTHORITY <br/>
 KARACHI<br/>

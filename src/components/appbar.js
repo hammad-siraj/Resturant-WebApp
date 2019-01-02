@@ -9,7 +9,7 @@ export default class Appbar extends React.Component{
         return(
         <div className='container'>
             <Navbar  dark color='secondary' expand='md'>
-<NavbarBrand className='mr-auto'><img width='4%' height='4%' src='./assets/images/mainlogo.png' alt='AL-HAMMAD' /></NavbarBrand>
+<NavbarBrand className='mr-auto'><img width='5%' src='/assets/images/mainlogo.png'/></NavbarBrand>
 <Nav navbar>
 <NavItem >
  <NavLink className='nav-link' to='/home'>
@@ -29,6 +29,14 @@ export default class Appbar extends React.Component{
     <span className='fa fa-address-card fa-lg'> </span>
        CONTACT </NavLink>
     </NavItem>
+<NavItem>
+<NavLink  className='nav-link' to='/aboutus' >
+   <span className='fa fa-info '></span>
+    ABOUT 
+</NavLink>
+
+    </NavItem>
+
 
 </Nav>
 

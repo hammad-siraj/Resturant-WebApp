@@ -1,10 +1,10 @@
 import React from 'react';
-import{Col,Media ,Card,CardBody,CardText,CardImg,CardImgOverlay,CardTitle} from 'reactstrap';
-
+import{Breadcrumb,BreadcrumbItem,Media ,Card,CardBody,CardText,CardImg,CardImgOverlay,CardTitle} from 'reactstrap';
+import {Link} from 'react-router-dom'
 export  class Dishdetailed extends React.Component{
 
 
-dishRender =(dish)=>{
+RenderDish =(dish)=>{
  if(dish!=null){return( <Card>  <CardTitle>{dish.name}</CardTitle> <CardImg top src={dish.image} alt={dish.name} />
     <CardBody>
     
@@ -20,46 +20,82 @@ dishRender =(dish)=>{
 
 }
 
-renderComments= (dish)=>{
- if(dish!=null){
+RenderComment = (comments)=>{
+console.log("render comp ", comments);
+  if (comments != null) {
+  const Comments = 
+        <div>
+          <p>{comments.comment}</p>
+          <p>-- {comments.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))}</p>
+        </div>
+      
+    
 
-   const dishComments = dish.comments.map((comment)=> 
-   {return (<p key={comment.id}> {comment.comment} <br/> {comment.author}  {new Intl.DateTimeFormat('en-us',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(Date.parse(comment.date)))}  </p>)}
-   )
- return(
+    return (
+      <div className="list-unstyled">
+        <h4>Comments</h4>
+        {Comments}
+      </div>
+    );
+  }
 
-<Col sm="10">
-    <Card>
-        <CardBody>
-    <h4>
-COMMENTS    
-</h4>
-{dishComments}
-</CardBody>
-</Card>
- </Col>
+  else {
+    return (
+      <div></div>
+    );
+  }
 
- )
 
 }
-else{return(<div></div>)}
 
 
+// renderComments= (comment)=>{
+//     return(
+//   this.props.comment.map((comments)=>{
+//         return(
+//             <Card>
+            
+//             <CardBody>
+            
+//             <CardTitle><h1>{comments.author}</h1></CardTitle>
+            
+//             </CardBody>
+//             </Card>
+               
+//         )
+        
+//         })
+//         )
+        
 
-
-}
-
-
+//     }
 
 render(){
+ console.log('comment d.js' ,this.props.comment);
+// console.log('comment d.js' ,this.props.dishid);
 
-    return(<div className="container">
+return(<div className="container">
+<div className='row'>
+<div className='col-2'>
+<Breadcrumb>
+<BreadcrumbItem>
+    <Link to='/home'>HOME</Link>
+</BreadcrumbItem>
+<BreadcrumbItem>
+
+<Link to='/menu' >MENU</Link>
+</BreadcrumbItem>
+
+</Breadcrumb>
+</div>
+  </div>
         <div className="row">
         <div  className="col-12 col-md-5 m-1">
-        {this.dishRender(this.props.dishes)}
+        {this.RenderDish(this.props.dishid)}
     </div>
       <div  className="col-12 col-md-5 m-1">
-      {this.renderComments(this.props.dishes)}
+      {this.RenderComment(this.props.comment)}
+      {/* {this.renderComments(this.props.comment)} */}
        </div>
         </div>
         </div>);

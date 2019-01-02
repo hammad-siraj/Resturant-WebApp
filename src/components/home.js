@@ -8,7 +8,7 @@ return(
 <CardImg width='100%' src={item.image} alt={item.name}/>
 <CardTitle>{item.name}</CardTitle>
 {item.designation ?  <CardSubtitle>{item.designation}</CardSubtitle>:null}
-<CardText><p>{item.description}</p></CardText>
+<CardText>{item.description}</CardText>
 </Card>
 )
 

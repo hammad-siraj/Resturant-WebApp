@@ -28,7 +28,7 @@
     },
     {
       id: 3,
-      name: 'Zakir',
+      name: 'Alberto somayyo',
       image: '/assets/images/leader.jpg',
       designation: 'Executive Chef',
       abbr: 'EC',
