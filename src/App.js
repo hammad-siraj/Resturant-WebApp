@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
-
-import Appbar from './components/appbar'
 import Main from './components/Maincomponent';
+import {configureStore} from './redux/store'
+import {Provider} from 'react-redux'
+const store = configureStore();
+
 class App extends Component {
 
 render (){
 
 return(
-
+<Provider store={store}>
 <BrowserRouter>
-<div> 
 
 <Main/>
 
-</div>
 </BrowserRouter>
-
+</Provider>
 )
 
 }

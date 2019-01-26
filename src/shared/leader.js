@@ -2,7 +2,7 @@
     {
       id: 0,
       name: 'Peter Pan',
-      image: '/assets/images/leader.jpg',
+      image: '/assets/images/alberto.png',
       designation: 'Chief Epicurious Officer',
       abbr: 'CEO',
       featured: false,
@@ -11,7 +11,7 @@
     {
       id: 1,
       name: 'Dhanasekaran Witherspoon',
-      image: '/assets/images/leader.jpg',
+      image: '/assets/images/alberto.png',
       designation: 'Chief Food Officer',
       abbr: 'CFO',
         featured: false,
@@ -20,7 +20,7 @@
     {
       id: 2,
       name: 'Agumbe Tang',
-      image: '/assets/images/leader.jpg',
+      image: '/assets/images/alberto.png',
       designation: 'Chief Taste Officer',
       abbr: 'CTO',
         featured: false,
@@ -29,7 +29,7 @@
     {
       id: 3,
       name: 'Alberto somayyo',
-      image: '/assets/images/leader.jpg',
+      image: '/assets/images/alberto.png',
       designation: 'Executive Chef',
       abbr: 'EC',
       featured: true,
